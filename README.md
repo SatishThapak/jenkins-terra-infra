@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # 🚀 Project Overview: jenkins-terra-infra
 
  This Terraform-based infrastructure project automates the provisioning of a complete Jenkins deployment on AWS, designed with modularity, scalability, and reusability in mind. It leverages Terraform modules to manage cloud components individually — enabling clean separation of concerns and easier maintenance.
@@ -35,11 +33,14 @@ jenkins-terra-infra/
 
 ## 🧱 Architecture Breakdown
 
-#Core Files:
+# Core Files:
 
 main.tf: Entry point that wires together all modules.
+
 provider.tf: AWS provider configuration.
+
 backend.tf: Configures remote state storage.
+
 variables.tf & terraform.tfvars: Parameterize deployment and allow environment-specific values.
 
 # Modules Directory:
