@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # 🚀 Project Overview: jenkins-terra-infra
 
@@ -66,4 +67,3 @@ load_balancer_target_group/: Handles registration of Jenkins instance into targe
 ☁️ Supports high availability when scaling with load balancers and multiple subnets.
 
 🧩 Easily integrates with GitHub Actions, Jenkins agents, or Terraform Cloud.
-
