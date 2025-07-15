@@ -37,29 +37,20 @@ jenkins-terra-infra/
 
 #Core Files:
 
-* main.tf * : Entry point that wires together all modules.
-
+main.tf: Entry point that wires together all modules.
 provider.tf: AWS provider configuration.
-
 backend.tf: Configures remote state storage.
-
 variables.tf & terraform.tfvars: Parameterize deployment and allow environment-specific values.
 
-README.md: Your go-to guide for setup and usage.
-
-Modules Directory:
-
+# Modules Directory:
 networking/: Provisions VPC, subnets, and internet gateways.
-
-security_group/ (currently spelled securtiy-groups): Defines security rules for Jenkins, SSH, and load balancers.
-
+security_group/: Defines security rules for Jenkins, SSH, and load balancers.
 jenkins_instance/: Launches EC2 instance with Jenkins pre-installed via cloud-init or user data.
-
 load-balancer/: Manages ALB/NLB setup to route traffic to Jenkins.
-
 load_balancer_target_group/: Handles registration of Jenkins instance into target groups for load balancing.
 
-🌟 Features & Benefits
+# 🌟 Features & Benefits
+
 🔐 Secure Jenkins access via custom security groups.
 
 ⚙️ Modular design makes it easy to swap resources (e.g., different AMIs or instance types).
