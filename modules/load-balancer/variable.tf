@@ -1,9 +1,16 @@
-variable "lb_target_group_name" {}
-variable "lb_target_group_port" {}
-variable "lb_target_group_protocol" {}
-variable "vpc_id" {}
 variable "lb_name" {}
-variable "lb_security_group" {}
-variable "lb_subnets" {
-  type = list(string)
-}
+variable "internal" {}
+variable "security_group_id" {}
+variable "subnet_ids" {}
+variable "protocol" {}
+variable "port" {}
+variable "target_group_name" {}
+variable "vpc_id" {}
+variable "health_check_path" {}
+variable "health_check_timeout" {}
+variable "health_check_interval" {}
+variable "healthy_threshold" {}
+variable "unhealthy_threshold" {}
+variable "domain_name" {}
+variable "public_subnet_config" {}
+variable "private_subnet_config" {}
