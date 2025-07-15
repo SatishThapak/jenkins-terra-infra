@@ -7,6 +7,14 @@ module "networking" {
   availability_zone     = var.availability_zone
 }
 
+module "security_group" {
+  source      = "./modules/securtiy-groups"
+  vpc_id      = module.networking.vpc_id
+  name        = "jenkins-sg"
+  description = "Allow SSH and Jenkins HTTP access"
+}
+
+
 module "jenkins_instance" {
   source        = "./modules/jenkins_instance"
   vpc_id        = module.networking.vpc_id
@@ -14,5 +22,7 @@ module "jenkins_instance" {
   instance_name = var.instance_name
   instance_type = var.instance_type
   subnet_id     = module.networking.public_subnet_ids[0]
-  enable_public_ip_address = true
+  enable_public_ip_address  = true
+  user_data_install_jenkins = templatefile("./modules/jenkins_instance/jenkins-installer.sh", {})
+  security_group_ids        = [module.security_group.security_group_id]
 }

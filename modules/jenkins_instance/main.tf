@@ -25,7 +25,7 @@ resource "aws_instance" "jenkins_instance" {
   associate_public_ip_address = var.enable_public_ip_address
 
   key_name = aws_key_pair.jenkins_key.key_name
-
+  user_data = var.user_data_install_jenkins
   tags = {
     Name = "jenkins-instance"
   }
