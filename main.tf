@@ -26,3 +26,13 @@ module "jenkins_instance" {
   user_data_install_jenkins = templatefile("./modules/jenkins_instance/jenkins-installer.sh", {})
   security_group_ids        = [module.security_group.security_group_id]
 }
+
+module "lb_target_group" {
+  source                   = "./modules/load-balancer-target group"
+  lb_target_group_name     = var.lb_target_group_name
+  lb_target_group_port     = 8080
+  lb_target_group_protocol = "HTTP"
+  vpc_id                   = module.networking.vpc_id
+  jenkins_instance_id      = module.jenkins_instance.jenkins_instance_id
+}
+

@@ -7,3 +7,4 @@ variable "availability_zone" {}
 variable "ami" {}
 variable "instance_type" {}
 variable "instance_name" {}
+variable "lb_target_group_name" {}
