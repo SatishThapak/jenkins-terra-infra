@@ -43,10 +43,15 @@ backend.tf: Configures remote state storage.
 variables.tf & terraform.tfvars: Parameterize deployment and allow environment-specific values.
 
 # Modules Directory:
+
 networking/: Provisions VPC, subnets, and internet gateways.
+
 security_group/: Defines security rules for Jenkins, SSH, and load balancers.
+
 jenkins_instance/: Launches EC2 instance with Jenkins pre-installed via cloud-init or user data.
+
 load-balancer/: Manages ALB/NLB setup to route traffic to Jenkins.
+
 load_balancer_target_group/: Handles registration of Jenkins instance into target groups for load balancing.
 
 # 🌟 Features & Benefits
