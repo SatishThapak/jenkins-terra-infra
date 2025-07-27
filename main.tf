@@ -24,8 +24,9 @@ module "jenkins_instance" {
   subnet_id     = module.networking.public_subnet_ids[0]
   enable_public_ip_address  = true
   user_data_install_jenkins = templatefile("./modules/jenkins_instance/jenkins-installer.sh", {})
-  security_group_ids        = [module.security_group.security_group_id]
+  security_group_id        = [module.security_group.security_group_id]
 }
+
 
 module "lb_target_group" {
   source                   = "./modules/load-balancer-target group"

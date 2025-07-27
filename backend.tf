@@ -1,3 +1,4 @@
+/*
 # s3 for storing terraform statefile
 terraform {
   backend "s3" {
@@ -8,3 +9,4 @@ terraform {
    # encrypt        = true
   }
 }
+*/
